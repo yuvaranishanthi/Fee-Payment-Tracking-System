@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Book Your Fee Payment Slot</h3>
+<form method="POST">
+    <input name="name" class="form-control" placeholder="Your Name" required><br>
+    <input name="email" class="form-control" placeholder="Your Email" required><br>
+    <input name="date" type="date" class="form-control" required><br>
+    <input name="time_slot" class="form-control" placeholder="Time Slot (e.g., 10:00-10:30)" required><br>
+    <input name="counter" type="number" class="form-control" placeholder="Counter (1-3)" required><br>
+    <button class="btn btn-primary">Book Slot</button>
+</form>
+{% if token %}
+    <div class="alert alert-success mt-3">
+        Your booking is confirmed! Token: <strong>{{ token }}</strong>
+    </div>
+{% endif %}
+{% endblock %}
